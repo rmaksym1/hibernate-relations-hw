@@ -13,8 +13,8 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="mate.academy.model.Movie"/>
-        <mapping class="mate.academy.model.Actor"/>
-        <mapping class="mate.academy.model.Country"/>
+        <mapping class="mate.academy.hibernate.relations.model.Movie"/>
+        <mapping class="mate.academy.hibernate.relations.model.Actor"/>
+        <mapping class="mate.academy.hibernate.relations.model.Country"/>
     </session-factory>
 </hibernate-configuration>
