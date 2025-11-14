@@ -1,4 +1,4 @@
-## The first and the most important rule: DO NOT COMMIT YOUR REAL DB CREDENTIALS
+хз## The first and the most important rule: DO NOT COMMIT YOUR REAL DB CREDENTIALS
 Better commit some common credentials. For example, for the password field: `1234` or `password` or `root`, etc.
 
 # Common mistakes
