@@ -4,15 +4,18 @@ import mate.academy.hibernate.relations.dao.MovieDao;
 import mate.academy.hibernate.relations.dao.impl.MovieDaoImpl;
 import mate.academy.hibernate.relations.model.Movie;
 import mate.academy.hibernate.relations.service.MovieService;
-import mate.academy.hibernate.relations.util.HibernateUtil;
+import org.hibernate.SessionFactory;
 
 public class MovieServiceImpl implements MovieService {
-    private final MovieDao movieDao = new MovieDaoImpl(HibernateUtil.getSessionFactory());
+    private final MovieDao movieDao;
+
+    public MovieServiceImpl(SessionFactory sessionFactory) {
+        this.movieDao = new MovieDaoImpl(sessionFactory);
+    }
 
     @Override
     public Movie add(Movie movie) {
-        movieDao.add(movie);
-        return movie;
+        return movieDao.add(movie);
     }
 
     @Override

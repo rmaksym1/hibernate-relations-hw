@@ -5,14 +5,18 @@ import mate.academy.hibernate.relations.dao.impl.ActorDaoImpl;
 import mate.academy.hibernate.relations.model.Actor;
 import mate.academy.hibernate.relations.service.ActorService;
 import mate.academy.hibernate.relations.util.HibernateUtil;
+import org.hibernate.SessionFactory;
 
 public class ActorServiceImpl implements ActorService {
-    private final ActorDao actorDao = new ActorDaoImpl(HibernateUtil.getSessionFactory());
+    private final ActorDao actorDao;
+
+    public ActorServiceImpl(SessionFactory sessionFactory) {
+        this.actorDao = new ActorDaoImpl(sessionFactory);
+    }
 
     @Override
     public Actor add(Actor actor) {
-        actorDao.add(actor);
-        return actor;
+        return actorDao.add(actor);
     }
 
     @Override
